@@ -7,6 +7,55 @@ import Icon from "@/components/ui/icon";
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Icon name="TrendingUp" className="text-blue-600" size={32} />
+              <h1 className="text-2xl font-bold text-gray-900 font-montserrat">
+                Прогресс 3.0
+              </h1>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <a
+                href="#about"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                О курсе
+              </a>
+              <a
+                href="#modules"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                Модули
+              </a>
+              <a
+                href="#results"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                Результаты
+              </a>
+              <a
+                href="#testimonials"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                Отзывы
+              </a>
+              <a
+                href="#contact"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                Контакты
+              </a>
+            </nav>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold">
+              Записаться
+            </Button>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-6">
@@ -49,8 +98,64 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 font-montserrat">
+              О курсе
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-open-sans">
+              Прогресс 3.0 - это комплексная система трансформации, которая
+              поможет вам достичь любых целей
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 text-center">
+              <Icon
+                name="Target"
+                className="text-blue-600 mx-auto mb-4"
+                size={48}
+              />
+              <h3 className="text-xl font-semibold mb-2 font-montserrat">
+                Четкие цели
+              </h3>
+              <p className="text-gray-600 font-open-sans">
+                Научитесь правильно ставить и достигать цели
+              </p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Icon
+                name="Users"
+                className="text-blue-600 mx-auto mb-4"
+                size={48}
+              />
+              <h3 className="text-xl font-semibold mb-2 font-montserrat">
+                Поддержка
+              </h3>
+              <p className="text-gray-600 font-open-sans">
+                Сообщество единомышленников и менторов
+              </p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Icon
+                name="Award"
+                className="text-blue-600 mx-auto mb-4"
+                size={48}
+              />
+              <h3 className="text-xl font-semibold mb-2 font-montserrat">
+                Результат
+              </h3>
+              <p className="text-gray-600 font-open-sans">
+                Гарантированный результат за 90 дней
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Course Modules */}
-      <section className="py-20 bg-gray-50">
+      <section id="modules" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 font-['Montserrat']">
@@ -169,7 +274,7 @@ const Index = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-20 bg-white">
+      <section id="results" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 font-['Montserrat']">
@@ -198,29 +303,159 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-500 to-green-600 text-white">
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 font-montserrat">
+              Отзывы
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-open-sans">
+              Истории успеха наших выпускниц
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Анна Петрова",
+                text: "За 90 дней я увеличила доходы в 2 раза и запустила собственный бизнес!",
+              },
+              {
+                name: "Михаил Сидоров",
+                text: "Курс помог мне систематизировать подход к целям и достичь невозможного.",
+              },
+              {
+                name: "Елена Козлова",
+                text: "Прогресс 3.0 изменил мою жизнь. Теперь я четко знаю, чего хочу и как этого достичь.",
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Icon name="User" className="text-blue-600" size={24} />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold font-montserrat">
+                      {testimonial.name}
+                    </h4>
+                  </div>
+                </div>
+                <p className="text-gray-600 font-open-sans">
+                  "{testimonial.text}"
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-4 font-['Montserrat']">
-            Готовы начать свой путь к успеху?
+          <h2 className="text-4xl font-bold mb-6 font-montserrat">
+            Готовы начать?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto font-['Open_Sans']">
-            Присоединяйтесь к курсу "Прогресс 3.0" и начните трансформацию уже
-            сегодня
+          <p className="text-xl mb-8 max-w-2xl mx-auto font-open-sans">
+            Присоединяйтесь к сотням людей, которые уже изменили свою жизнь с
+            помощью курса Прогресс 3.0
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 text-lg font-medium">
-              Записаться сейчас
+          <div className="flex justify-center space-x-4">
+            <Button
+              size="lg"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold"
+            >
+              Записаться на курс
             </Button>
             <Button
+              size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 text-lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold"
             >
-              Связаться с нами
+              Задать вопрос
             </Button>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Icon name="TrendingUp" className="text-blue-400" size={24} />
+                <h3 className="text-xl font-bold font-montserrat">
+                  Прогресс 3.0
+                </h3>
+              </div>
+              <p className="text-gray-400 font-open-sans">
+                Курс для достижения целей и изменения жизни
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 font-montserrat">Навигация</h4>
+              <div className="space-y-2">
+                <a
+                  href="#about"
+                  className="text-gray-400 hover:text-white transition-colors block font-open-sans"
+                >
+                  О курсе
+                </a>
+                <a
+                  href="#modules"
+                  className="text-gray-400 hover:text-white transition-colors block font-open-sans"
+                >
+                  Модули
+                </a>
+                <a
+                  href="#results"
+                  className="text-gray-400 hover:text-white transition-colors block font-open-sans"
+                >
+                  Результаты
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 font-montserrat">Контакты</h4>
+              <div className="space-y-2">
+                <p className="text-gray-400 font-open-sans">
+                  Email: info@progress3.ru
+                </p>
+                <p className="text-gray-400 font-open-sans">
+                  Телефон: +7 (999) 123-45-67
+                </p>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 font-montserrat">
+                Социальные сети
+              </h4>
+              <div className="flex space-x-4">
+                <Icon
+                  name="Facebook"
+                  className="text-gray-400 hover:text-white cursor-pointer"
+                  size={24}
+                />
+                <Icon
+                  name="Instagram"
+                  className="text-gray-400 hover:text-white cursor-pointer"
+                  size={24}
+                />
+                <Icon
+                  name="Twitter"
+                  className="text-gray-400 hover:text-white cursor-pointer"
+                  size={24}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-400 font-open-sans">
+              &copy; 2024 Прогресс 3.0. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
